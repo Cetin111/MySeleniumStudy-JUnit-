@@ -29,8 +29,10 @@ public class C03_RadioButton {
         driver.get("https://www.facebook.com");
         //Cookies’i kabul edin
       //  driver.findElement(By.xpath("//*[text()='Allow essential and optional cookies']")).click();
+
         //“Create an Account” button’una basin
-      //  driver.findElement(By.xpath("//*[text()='Create new account']")).click();
+       driver.findElement(By.xpath("//*[text()='Yeni Hesap Oluştur']")).click();
+
         //“radio buttons” elementlerini locate edin  //id lerle yapinca olmadi her guiriste id degisti
         WebElement femaleButton=driver.findElement(By.xpath("//input[@value='1']"));
         WebElement maleButton=driver.findElement(By.xpath("//input[@value='2']"));
