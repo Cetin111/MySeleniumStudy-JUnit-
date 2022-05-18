@@ -17,7 +17,7 @@ public class C03_BasicAuthentication {
     }
     @AfterClass
     public static void tearDown(){
-        //driver.quit();
+       driver.quit();
     }
     @Test
     public void test01(){
