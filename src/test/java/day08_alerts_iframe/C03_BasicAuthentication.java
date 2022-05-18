@@ -1,4 +1,4 @@
-package day08_alerts;
+package day08_alerts_iframe;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -19,6 +19,10 @@ public class C03_BasicAuthentication {
     public static void tearDown(){
        driver.quit();
     }
+
+    // bazi web stelerinde ve ozellikle Api haberlesme site girislerinde kullanici adi ve sifreyi
+    //manuel elle girmek yerine servis saglyicinin verdigi bilgiler ile Url ye girebiliriz
+    //bir nevi sifreli giris gibi...
     @Test
     public void test01(){
         driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");

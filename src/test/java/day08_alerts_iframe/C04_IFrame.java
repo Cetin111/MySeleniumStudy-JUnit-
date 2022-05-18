@@ -1,4 +1,4 @@
-package day08_alerts;
+package day08_alerts_iframe;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -48,7 +48,7 @@ public class C04_IFrame {
         //      linkinin textinin gorunur oldugunu  dogrulayin ve  konsolda yazdirin.
         // link yazi elementini dogru locate etmemize ragmen yazdirmadi
         // cunku yukarida iFrame'e gecis yapmistik
-        // once oradan cikmamiz lazim
+        // once oradan cikmamiz lazim ya defaultContent yada parentFrame ile cikabiliriz.
         driver.switchTo().defaultContent();
         WebElement linkYaziElementi=driver.findElement(By.linkText("Elemental Selenium"));
         Assert.assertTrue(linkYaziElementi.isDisplayed());
