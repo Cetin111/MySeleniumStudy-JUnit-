@@ -1,6 +1,6 @@
 package day09_handleWindows_testBase;
 
-public class C03My {
+public class C03MyKaldi {
     //● Tests package’inda yeni bir class olusturun: WindowHandle2
     //● https://the-internet.herokuapp.com/windows adresine gidin.
     //● Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
