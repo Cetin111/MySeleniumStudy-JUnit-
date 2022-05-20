@@ -1,5 +1,6 @@
-package day10_actions;
+package day11_faker_file;
 
+import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,15 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class C06_KeyboardActions extends TestBase {
+public class C01_faker extends TestBase {
     @Test
     public void test() {
-        // facebook ana sayfaya gidip
-        // yeni kayit olustur butonuna basalim
-        // isim kutusunu locate edip
-        // geriye kalan alanlari tab ile dolasarak formu doldurun
-
-
+        //day10, class6 daki facebook gorevini fake isimlerle yapalim.
         driver.get("https://www.facebook.com");
 
         // yeni kayit olustur butonuna basalim
@@ -26,14 +22,16 @@ public class C06_KeyboardActions extends TestBase {
 
         // geriye kalan alanlari tab ile dolasarak formu doldurun
         Actions actions = new Actions(driver);
+        Faker faker = new Faker();
+        String fakeMail = faker.internet().emailAddress();
         actions.click(isimKutusu)
-                .sendKeys("Taha")
+                .sendKeys(faker.name().firstName())
                 .sendKeys(Keys.TAB)
-                .sendKeys("Kaya")
+                .sendKeys(faker.name().lastName())
                 .sendKeys(Keys.TAB)
-                .sendKeys("123456789")
+                .sendKeys(fakeMail)
                 .sendKeys(Keys.TAB)
-                .sendKeys("asdasf@fdfgdgdg")
+                .sendKeys(faker.internet().password())
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB)
                 .sendKeys("Nisan")
@@ -49,8 +47,5 @@ public class C06_KeyboardActions extends TestBase {
                 .sendKeys(Keys.TAB).sendKeys(Keys.ENTER)
 
                 .perform();
-
-
-
     }
 }
