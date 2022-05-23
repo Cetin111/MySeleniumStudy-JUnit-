@@ -45,5 +45,6 @@ public class C01_Alerts {
         String actualResultYazisi=sonucYaziElementi.getText();
         Assert.assertEquals(expectedResult,actualResultYazisi);
 
+
     }
 }
