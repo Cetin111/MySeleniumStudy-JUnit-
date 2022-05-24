@@ -1,4 +1,4 @@
-package practice.practice;
+package day07_assertions.practice.practice;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;

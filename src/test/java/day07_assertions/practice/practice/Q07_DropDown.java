@@ -1,4 +1,4 @@
-package practice.practice;
+package day07_assertions.practice.practice;
 
 public class Q07_DropDown {
     // go to url : https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/

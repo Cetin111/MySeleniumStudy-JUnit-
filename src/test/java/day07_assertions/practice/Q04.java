@@ -1,6 +1,10 @@
-package practice;
-
-public class Q04MyCalis {
+package day07_assertions.practice;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import java.time.Duration;
+public class Q04 {
     /*
     ...Exercise4...
     https://www.teknosa.com/ adresine gidiniz
@@ -37,4 +41,22 @@ public class Q04MyCalis {
             Örnek:
             js.executeScript("window.scrollBy(0,1000)"); // Dikey olarak 1000 piksel aşağı kaydır
      */
+    public static void main(String[] args) {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get("https://www.teknosa.com/");
+        ChromeOptions op = new ChromeOptions();
+        op.addArguments("disable-popup-blocking");
+        WebElement searchArea = driver.findElement(By.xpath("//input[@id ='search-input']"));
+        searchArea.sendKeys("oppo" + Keys.ENTER);
+        System.out.println(driver.findElement(By.xpath("//div[@class ='plp-info']")).getText());
+        driver.findElement(By.xpath("(//a[@class='prd-link'])[1]")).click();
+        driver.findElement(By.xpath("//button[@id ='addToCartButton']")).click();
+        driver.findElement(By.xpath("//a[@class ='btn btn-secondary']")).click();
+        System.out.println("siparis ozeti yazisi :" +  driver.findElement(By.xpath("//div[@class= 'cart-sum-title']")).getText());
+        driver.findElement(By.xpath("//span[.= 'Alışverişi Tamamla']")).click();
+        System.out.println("hosgeldiniz yazisi :" +driver.findElement(By.xpath("//div[text()= 'Teknosa’ya hoş geldiniz']")).getText());
+    }
 }

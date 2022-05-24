@@ -1,4 +1,5 @@
-package practice;
+package day07_assertions.practice.practice;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;
@@ -6,8 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.locators.RelativeLocator;
+
 import java.time.Duration;
-public class Q02 {
+
+public class Q02_RelativeLocator {
     /*
     ...Exercise2...
     http://www.bestbuy.com 'a gidin,
@@ -16,10 +19,12 @@ public class Q02 {
         logoTest => BestBuy logosunun gorunutulenip goruntulenmedigini dogrulayin
         mexicoLinkTest => Linkin gorunutulenip goruntulenmedigini dogrulayin
  */
+
     static WebDriver driver;
     @BeforeClass
     public static void setUp(){
         WebDriverManager.chromedriver().setup();
+
     }
     @Before
     public void testtenOnce(){
@@ -32,22 +37,25 @@ public class Q02 {
     public void titleTest(){
         Assert.assertTrue("title Best kelimesi icermiyor", driver.getTitle().contains("Best"));
     }
+
     @Test
     public void  logoTest(){
-        // WebElement logoBestBuy = driver.findElement(By.xpath("//img[@class ='logo']"));
+       // WebElement logoBestBuy = driver.findElement(By.xpath("//img[@class ='logo']"));
         WebElement helloHEading = driver.findElement(By.xpath("//div[@class ='heading']"));
         WebElement logoBestBuy = driver.findElement(RelativeLocator.with(By.tagName("img")).above(helloHEading));
         Assert.assertTrue(logoBestBuy.isDisplayed());
     }
+
     @Test
     public void mexicoLinkTest(){
-        WebElement usLink = driver.findElement(By.xpath("(//img[@alt ='United States'])[1]"));
-        WebElement chooseYazisi =driver.findElement(By.xpath("//h1[text()='Choose a country.']"));
-        WebElement mexicoLink = driver.findElement(RelativeLocator.with(By.tagName("a")). toRightOf(usLink).below(chooseYazisi));
-        Assert.assertTrue(mexicoLink.isDisplayed());
+    WebElement usLink = driver.findElement(By.xpath("(//img[@alt ='United States'])[1]"));
+    WebElement chooseYazisi =driver.findElement(By.xpath("//h1[text()='Choose a country.']"));
+    WebElement mexicoLink = driver.findElement(RelativeLocator.with(By.tagName("a")). toRightOf(usLink).below(chooseYazisi));
+    Assert.assertTrue(mexicoLink.isDisplayed());
     }
     @After
     public void kapat(){
         driver.close();
     }
+
 }

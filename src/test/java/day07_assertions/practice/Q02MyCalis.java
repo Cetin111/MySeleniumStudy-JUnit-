@@ -1,4 +1,4 @@
-package practice;
+package day07_assertions.practice;
 
 public class Q02MyCalis {
       /*

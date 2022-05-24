@@ -1,4 +1,4 @@
-package practice.practice;
+package day07_assertions.practice.practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 
-public class Q03_CssLocator_MethodCreation {
+public class idQ03_CssLocator_MethodCreation {
 
     /*
      ...Exercise3...

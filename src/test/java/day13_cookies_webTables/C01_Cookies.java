@@ -12,6 +12,7 @@ public class C01_Cookies extends TestBase {
         //2- tum cookie’leri listeleyin
         Set<Cookie> cookiesSet= driver.manage().getCookies();
         System.out.println(cookiesSet);
+
         int sayac=1;
         for (Cookie each:cookiesSet
         ) {
@@ -20,6 +21,7 @@ public class C01_Cookies extends TestBase {
             System.out.println("value : "+ each.getValue());
             sayac++;
         }
+
         //3- Sayfadaki cookies sayisinin 5’den buyuk oldugunu test edin
         int cookieSayisi= cookiesSet.size();
         Assert.assertTrue(cookieSayisi>5);
