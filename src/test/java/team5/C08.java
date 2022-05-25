@@ -17,8 +17,8 @@ public class C08 extends TestBase {
     //5."username" ve "password" kutularina deger yazdirin
     //6."login" butonuna basin
     //7.Popup'ta cikan yazinin "validation failed" oldugunu test edin
-    //    8.Ok diyerek Popup'i kapatin
-    //  9.Ilk sayfaya geri donun
+    //8.Ok diyerek Popup'i kapatin
+    //9.Ilk sayfaya geri donun
     //10.Ilk sayfaya donuldugunu test edin
 
 
